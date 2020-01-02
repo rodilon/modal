@@ -18,25 +18,20 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "Teste"
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
         toolbar.setTitleTextColor(resources.getColor(android.R.color.white))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when (item.itemId) {
-            R.id.filter -> {
-                Toast.makeText(this, "Testando botao de filtro", Toast.LENGTH_LONG).show()
-                return true
-            }
-
+        val iconFilter = menu!!.findItem(R.id.filter)
+        val iconView = iconFilter.actionView
+        iconView.setOnClickListener {
+            Toast.makeText(this, "Clicou no filtro", Toast.LENGTH_LONG).show()
         }
-        return super.onOptionsItemSelected(item)
-
+        return true
     }
 
 }
