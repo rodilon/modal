@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Teste Banco modal</string>
     <string name="title_image_menu_filter_main">Filter</string>
+    <string name="main_filtering">Filtrando:</string>
 </resources>

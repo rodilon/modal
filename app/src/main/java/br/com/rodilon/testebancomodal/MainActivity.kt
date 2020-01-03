@@ -3,9 +3,8 @@ package br.com.rodilon.testebancomodal
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.widget.Toast
+import br.com.rodilon.testebancomodal.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "Teste"
-        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
         toolbar.setTitleTextColor(resources.getColor(android.R.color.white))
     }
 
