@@ -9,8 +9,8 @@ import android.widget.FrameLayout
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import br.com.rodilon.testebancomodal.R
-import br.com.rodilon.testebancomodal.home.TypeConstants.TYPE_CONST_FILTER
-import br.com.rodilon.testebancomodal.home.TypeConstants.TYPE_CONST_HOME
+import br.com.rodilon.testebancomodal.commom.TypeConstants.TYPE_CONST_FILTER
+import br.com.rodilon.testebancomodal.commom.TypeConstants.TYPE_CONST_HOME
 import kotlinx.android.synthetic.main.view_button_filter.view.*
 
 class ButtonFilterView : FrameLayout {

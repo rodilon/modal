@@ -5,7 +5,8 @@
     android:id="@+id/act_main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/colorPrimary"
+    tools:context=".home.ui.activity.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/activity_main_toolbar"
@@ -15,14 +16,6 @@
         android:gravity="center_vertical|start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="54dp"-->
-<!--        android:background="@color/colorBlack"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/activity_main_toolbar" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/act_main_filter_container"
@@ -76,6 +69,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@id/act_main_progress_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,6 +130,6 @@
             android:layout_marginStart="8dp"
             android:background="@color/colorBlack"
             android:gravity="center|top"
-            android:text="limpar filtros" />
+            android:text="@string/clear_filter" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
