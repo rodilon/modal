@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/act_main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -15,36 +16,126 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="@color/colorBlack"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_main_toolbar"/>
-
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:background="@color/colorBlack"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/activity_main_toolbar" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/home_filter_content"
+        android:id="@+id/act_main_filter_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/imageView">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_toolbar">
 
         <TextView
-            android:text="@string/main_filtering"
+            android:id="@+id/act_main_filtering"
+            style="@style/TextAppearance.ArialNarrow.GrayChateau"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="42dp"
             android:layout_marginStart="8dp"
-            android:textSize="9sp"
+            android:layout_marginTop="16dp"
+            android:text="@string/main_filtering"
             android:textAllCaps="true"
-            style="@style/TextAppearance.ArialNarrow.GrayChateau"
+            android:textSize="9sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <br.com.rodilon.testebancomodal.home.ButtonFilterView
+            android:id="@+id/act_main_button_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/act_main_filtering"
+            app:layout_constraintTop_toBottomOf="@id/act_main_filtering" />
+
+        <br.com.rodilon.testebancomodal.home.ButtonFilterView
+            android:id="@+id/act_main_button_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/act_main_button_first"
+            app:layout_constraintTop_toBottomOf="@id/act_main_filtering" />
+
+        <br.com.rodilon.testebancomodal.home.ButtonFilterView
+            android:id="@+id/act_main_button_third"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/act_main_button_second"
+            app:layout_constraintTop_toBottomOf="@id/act_main_filtering" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@id/act_main_progress_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/act_main_filter_container">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/act_main_recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            android:scrollbarThumbVertical="@android:color/darker_gray"
+            tools:listitem="@layout/layout_repository_item" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <ProgressBar
+        android:id="@+id/act_main_progress_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/colorShark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/act_main_progress_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/colorShark"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/act_main_container_clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/act_main_container_clear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorBlack"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/act_main_view_clear"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center|top"
+            android:background="@drawable/ic_delete_filter_aquamarine" />
+
+        <TextView
+            android:id="@+id/act_main_clear_filter"
+            style="@style/TextAppearance.ArialNarrowBoldItalic.Aquamarine"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/colorBlack"
+            android:gravity="center|top"
+            android:text="limpar filtros" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

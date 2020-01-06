@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/repository_item_principal_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@color/colorShark">
+
+    <ImageView
+        android:id="@+id/repository_item_imageview"
+        android:layout_width="36dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/repository_item_name"
+        style="@style/TextAppearance.ArialNarrowBold.White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:maxLength="20"
+        tools:text="Repositório"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/repository_item_imageview"
+        app:layout_constraintStart_toEndOf="@id/repository_item_imageview"
+        app:layout_constraintTop_toTopOf="@id/repository_item_imageview" />
+
+    <TextView
+        android:id="@+id/repository_item_total_stars"
+        style="@style/TextAppearance.RobotoRegular.Manatee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="@string/total_stars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/repository_item_imageview" />
+
+    <TextView
+        android:id="@+id/repository_item_total_number"
+        style="@style/TextAppearance.ArialNarrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="23243"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/repository_item_total_stars"
+        app:layout_constraintTop_toBottomOf="@id/repository_item_total_stars" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/repository_item_secondary_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repository_item_imageview">
+
+        <TextView
+            android:id="@+id/repository_item_followers"
+            style="@style/TextAppearance.RobotoRegular.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/followers"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/repository_item_followers_number"
+            style="@style/TextAppearance.ArialNarrowBold.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            tools:text="1000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/repository_item_followers"
+            app:layout_constraintTop_toBottomOf="@id/repository_item_followers" />
+
+        <TextView
+            android:id="@+id/repository_item_date"
+            style="@style/TextAppearance.RobotoRegular.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/date"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toEndOf="@id/repository_item_followers"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/TextAppearance.ArialNarrowBold.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/temporary_date"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/repository_item_date"
+            app:layout_constraintTop_toBottomOf="@id/repository_item_date" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
