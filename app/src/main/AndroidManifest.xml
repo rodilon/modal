@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".DetailActivity"></activity>
-        <activity android:name=".FilterActivity" />
-        <activity android:name=".MainActivity"
+        <activity android:name=".detail.DetailActivity"></activity>
+        <activity android:name=".filter.FilterActivity" />
+        <activity android:name=".home.ui.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

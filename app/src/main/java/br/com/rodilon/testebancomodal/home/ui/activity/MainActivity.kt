@@ -1,26 +1,31 @@
-package br.com.rodilon.testebancomodal
+package br.com.rodilon.testebancomodal.home.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.rodilon.testebancomodal.MainActivity.NameButtonConstants.NAME_FIRST_BUTTON
-import br.com.rodilon.testebancomodal.MainActivity.NameButtonConstants.NAME_SECOND_BUTTON
-import br.com.rodilon.testebancomodal.MainActivity.NameButtonConstants.NAME_THIRD_BUTTON
-import br.com.rodilon.testebancomodal.Resource.Companion.INTERNAL_SERVER_ERROR
-import br.com.rodilon.testebancomodal.Resource.Companion.LOADING
-import br.com.rodilon.testebancomodal.Resource.Companion.SUCCESS
+import br.com.rodilon.testebancomodal.*
+import br.com.rodilon.testebancomodal.commom.NameButtons.NAME_FIRST_BUTTON
+import br.com.rodilon.testebancomodal.commom.NameButtons.NAME_SECOND_BUTTON
+import br.com.rodilon.testebancomodal.commom.NameButtons.NAME_THIRD_BUTTON
+import br.com.rodilon.testebancomodal.commom.PaginationScroll
+import br.com.rodilon.testebancomodal.model.Resource.Companion.INTERNAL_SERVER_ERROR
+import br.com.rodilon.testebancomodal.model.Resource.Companion.LOADING
+import br.com.rodilon.testebancomodal.model.Resource.Companion.SUCCESS
 import br.com.rodilon.testebancomodal.home.ButtonFilterView
-import br.com.rodilon.testebancomodal.home.TypeConstants.TYPE_CONST_FILTER
-import br.com.rodilon.testebancomodal.home.TypeConstants.TYPE_CONST_HOME
+import br.com.rodilon.testebancomodal.commom.TypeConstants.TYPE_CONST_HOME
+import br.com.rodilon.testebancomodal.filter.FilterActivity
 import br.com.rodilon.testebancomodal.home.model.Repository
 import br.com.rodilon.testebancomodal.home.model.RepositoryItemsList
+import br.com.rodilon.testebancomodal.home.ui.adapter.RepositoryAdapter
+import br.com.rodilon.testebancomodal.home.ui.view_model.RepositoryViewModel
+import br.com.rodilon.testebancomodal.model.Resource
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -38,12 +43,9 @@ class MainActivity : AppCompatActivity() {
     private var repositoryViewModel: RepositoryViewModel? = null
     private val statusObserver: Observer<Resource<RepositoryItemsList>> = getRepoObserver()
 
-    private var list: List<Int> = ArrayList()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        list = listOf(TYPE_CONST_FILTER)
         initViewModel()
         bindViews()
         fetchData(page)
@@ -59,24 +61,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupFilterButtonViews() {
-        if (list.isEmpty()) {
-            act_main_filter_container.visibility = View.GONE
-        } else {
-            buttonFilterViewFirst
-                .makeLayout(TYPE_CONST_FILTER)
-                .setupContentButton(NAME_FIRST_BUTTON)
-                .build()
+        buttonFilterViewFirst
+            .makeLayout(TYPE_CONST_HOME)
+            .setupContentButton(NAME_FIRST_BUTTON)
+            .build()
 
-            buttonFilterViewSecond
-                .makeLayout(TYPE_CONST_HOME)
-                .setupContentButton(NAME_SECOND_BUTTON)
-                .build()
+        buttonFilterViewSecond
+            .makeLayout(TYPE_CONST_HOME)
+            .setupContentButton(NAME_SECOND_BUTTON)
+            .build()
 
-            buttonFilterViewThird
-                .makeLayout(TYPE_CONST_HOME)
-                .setupContentButton(NAME_THIRD_BUTTON)
-                .build()
-        }
+        buttonFilterViewThird
+            .makeLayout(TYPE_CONST_HOME)
+            .setupContentButton(NAME_THIRD_BUTTON)
+            .build()
     }
 
     private fun initViewModel() {
@@ -114,7 +112,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupLayout() {
-        repositoryAdapter = RepositoryAdapter(listRepository as List<Repository>)
+        repositoryAdapter =
+            RepositoryAdapter(listRepository as List<Repository>)
         act_main_recycler.itemAnimator = DefaultItemAnimator()
         linearLayoutManager = LinearLayoutManager(this)
         act_main_recycler.layoutManager = linearLayoutManager
@@ -134,7 +133,8 @@ class MainActivity : AppCompatActivity() {
         val iconFilter = menu!!.findItem(R.id.filter)
         val iconView = iconFilter.actionView
         iconView.setOnClickListener {
-            Toast.makeText(this, "Clicou no filtro", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, FilterActivity::class.java)
+            startActivity(intent)
         }
         return true
     }
@@ -160,11 +160,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    object NameButtonConstants {
-        const val NAME_FIRST_BUTTON = "DATA"
-        const val NAME_SECOND_BUTTON = "SEGUIDORES"
-        const val NAME_THIRD_BUTTON = "DECRESCENTE"
     }
 }

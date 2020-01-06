@@ -1,4 +1,4 @@
-package br.com.rodilon.testebancomodal
+package br.com.rodilon.testebancomodal.commom
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView

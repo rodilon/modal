@@ -1,9 +1,10 @@
-package br.com.rodilon.testebancomodal
+package br.com.rodilon.testebancomodal.home.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import br.com.rodilon.testebancomodal.R
 import br.com.rodilon.testebancomodal.home.model.Repository
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.layout_repository_item.view.*
@@ -13,7 +14,11 @@ class RepositoryAdapter(private val recyclerList: List<Repository>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.layout_repository_item, parent, false)
+                .inflate(
+                    R.layout.layout_repository_item,
+                    parent,
+                    false
+                )
         )
     }
 

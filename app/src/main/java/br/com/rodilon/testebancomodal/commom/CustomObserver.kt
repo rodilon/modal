@@ -1,6 +1,6 @@
-package br.com.rodilon.testebancomodal
+package br.com.rodilon.testebancomodal.commom
 
-import br.com.rodilon.testebancomodal.WebService.Companion.INTERNAL_SERVER_ERROR
+import br.com.rodilon.testebancomodal.repository.WebService.Companion.INTERNAL_SERVER_ERROR
 import io.reactivex.Observer
 import retrofit2.HttpException
 

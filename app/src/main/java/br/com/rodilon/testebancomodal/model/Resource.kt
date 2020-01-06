@@ -1,4 +1,4 @@
-package br.com.rodilon.testebancomodal
+package br.com.rodilon.testebancomodal.model
 
 class Resource<T> {
     var status: Int

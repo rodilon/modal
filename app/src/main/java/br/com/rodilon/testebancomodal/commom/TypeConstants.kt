@@ -1,4 +1,4 @@
-package br.com.rodilon.testebancomodal.home
+package br.com.rodilon.testebancomodal.commom
 
 object TypeConstants {
     const val TYPE_CONST_HOME = 1111

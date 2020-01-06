@@ -1,7 +1,8 @@
-package br.com.rodilon.testebancomodal
+package br.com.rodilon.testebancomodal.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.rodilon.testebancomodal.R
 
 class DetailActivity : AppCompatActivity() {
 

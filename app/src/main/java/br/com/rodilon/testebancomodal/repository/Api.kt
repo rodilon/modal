@@ -1,4 +1,4 @@
-package br.com.rodilon.testebancomodal
+package br.com.rodilon.testebancomodal.repository
 
 import br.com.rodilon.testebancomodal.home.model.RepositoryItemsList
 import io.reactivex.Observable
