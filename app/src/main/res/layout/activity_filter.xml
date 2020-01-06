@@ -4,6 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FilterActivity">
+    android:background="@color/colorPrimary"
+    tools:context=".filter.FilterActivity">
+
+    <include
+        android:id="@+id/act_filter_include_toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/act_filter_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/act_filter_include_toolbar">
+
+        <TextView
+            android:id="@+id/act_filter_filter"
+            style="@style/TextAppearance.MontserratSemiBold.GrayChateau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="35dp"
+            android:alpha="0.87"
+            android:lineSpacingExtra="4sp"
+            android:text="filtros"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <br.com.rodilon.testebancomodal.home.ButtonFilterView
+            android:id="@+id/act_filter_button_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/act_filter_filter"
+            app:layout_constraintTop_toBottomOf="@+id/act_filter_filter" />
+
+        <br.com.rodilon.testebancomodal.home.ButtonFilterView
+            android:id="@+id/act_filter_button_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/act_filter_button_first"
+            app:layout_constraintTop_toBottomOf="@+id/act_filter_filter" />
+
+        <br.com.rodilon.testebancomodal.home.ButtonFilterView
+            android:id="@+id/act_filter_button_third"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/act_filter_button_second"
+            app:layout_constraintTop_toBottomOf="@+id/act_filter_filter" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/act_filter_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorGrayChateau"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/act_filter_container" />
+
+    <TextView
+        android:id="@+id/act_filter_order"
+        style="@style/TextAppearance.MontserratSemiBold.GrayChateau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:alpha="0.87"
+        android:lineSpacingExtra="4sp"
+        android:text="ordem"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act_filter_divider" />
+
+    <br.com.rodilon.testebancomodal.home.ButtonFilterView
+        android:id="@+id/act_filter_button_growing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@+id/act_filter_order"
+        app:layout_constraintTop_toBottomOf="@+id/act_filter_order" />
+
+    <br.com.rodilon.testebancomodal.home.ButtonFilterView
+        android:id="@+id/act_filter_button_descending"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/act_filter_button_growing"
+        app:layout_constraintTop_toBottomOf="@+id/act_filter_order" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
