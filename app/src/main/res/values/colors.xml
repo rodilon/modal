@@ -7,4 +7,7 @@
     <color name="colorShark">#242528</color>
     <color name="colorGray">#7E7E7E</color>
     <color name="colorGrayChateau">#A1A6B0</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorManatee">#8F95A1</color>
+    <color name="colorAquamarine">#64FFDA</color>
 </resources>

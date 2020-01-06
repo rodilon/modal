@@ -2,4 +2,8 @@
     <string name="app_name">Teste Banco modal</string>
     <string name="title_image_menu_filter_main">Filter</string>
     <string name="main_filtering">Filtrando:</string>
+    <string name="total_stars">Total de estrelas</string>
+    <string name="followers">Seguidores</string>
+    <string name="date">Data</string>
+    <string name="temporary_date">361 dias</string>
 </resources>
