@@ -3,19 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/view_button_filter_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_custom_button"
+    android:padding="14dp">
 
-    <Button
-        android:id="@+id/id_view_custom_button"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/view_button_text"
+        style="@style/TextAppearance.ArialNarrowBoldItalic.Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        tools:text="Seguidores"
         android:drawableEnd="@drawable/ic_delete_filter"
-        style="@style/Base.Button.BordLess"
+        android:gravity="center"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Seguidores" />
 </androidx.constraintlayout.widget.ConstraintLayout>
