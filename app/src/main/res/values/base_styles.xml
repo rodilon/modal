@@ -7,6 +7,11 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="Base.TextAppearance.RobotoRegular" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
     <style name="TextAppearance.ArialNarrow" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">@font/arial_narrow</item>
         <item name="android:textColor">@color/colorWhite</item>
@@ -18,16 +23,12 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="TextAppearance.RobotoRegular.Manatee" parent="@android:style/TextAppearance">
-        <item name="android:fontFamily">@font/roboto_regular</item>
+    <style name="TextAppearance.RobotoRegular.Manatee" parent="Base.TextAppearance.RobotoRegular">
         <item name="android:textColor">@color/colorManatee</item>
-        <item name="android:textSize">10sp</item>
     </style>
 
-    <style name="TextAppearance.RobotoRegular.White" parent="@android:style/TextAppearance">
-        <item name="android:fontFamily">@font/roboto_regular</item>
+    <style name="TextAppearance.RobotoRegular.White" parent="Base.TextAppearance.RobotoRegular">
         <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:textSize">10sp</item>
     </style>
 
     <style name="TextAppearance.ArialNarrow.GrayChateau" parent="@android:style/TextAppearance">
@@ -47,6 +48,13 @@
         <item name="android:fontFamily">@font/montserrat_semi_bold</item>
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextAppearance.MontserratSemiBold.GrayChateau" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textColor">@color/colorGrayChateau</item>
+        <item name="android:textSize">10sp</item>
         <item name="android:textAllCaps">true</item>
     </style>
 </resources>

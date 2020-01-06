@@ -6,4 +6,5 @@
     <string name="followers">Seguidores</string>
     <string name="date">Data</string>
     <string name="temporary_date">361 dias</string>
+    <string name="clear_filter">limpar filtros</string>
 </resources>
